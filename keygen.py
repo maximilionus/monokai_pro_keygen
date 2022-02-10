@@ -1,8 +1,11 @@
 import re
+import sys
+import signal
 from hashlib import md5
 
 
 __version__ = '1.0.0'
+__author__ = 'maximilionus'
 __default_email = 'maximilionuss@gmail.com'
 
 
@@ -29,7 +32,7 @@ def __process_input():
     selected_email = ''
     email_regex = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
 
-    print("Monokai Pro Theme - Key Generator (v{})".format(__version__))
+    print("Monokai Pro Theme - Key Generator (v{})\nby @{}".format(__version__, __author__))
 
     while True:
         selected_editor = input("----"
@@ -73,5 +76,10 @@ def __print_action(text='', pre='', end='\n', is_failure=False, outline=False):
     print(pre, outline_sample, mark, ' ' if len(text) > 0 else '', text, outline_sample, end=end)
 
 
+def __handle_sigint():
+    signal.signal(signal.SIGINT, lambda signum, frame: sys.exit(1))
+
+
 if __name__ == '__main__':
+    __handle_sigint()
     __process_input()
