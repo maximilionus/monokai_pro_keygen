@@ -2,6 +2,11 @@
 
 # Monokai Pro - Keygen
 
+- [Monokai Pro - Keygen](#monokai-pro---keygen)
+  - [About](#about)
+  - [Usage](#usage)
+  - [Build](#build)
+
 
 ## About
 
@@ -17,17 +22,16 @@ Monokai Pro theme keygen for VSCode and Sublime Text
 
 ## Build
 1. Clone this repository
-2. Make sure that you have `gnu make` *(or any other `make`)* installed
-3. Install the `pipenv` package
+2. Install the `pipenv` package
    ```bash
    $ python -m pip install pipenv
    ```
-4. Install the project dependencies with `pipenv`
+3. Install the project dependencies with `pipenv`
    ```bash
    $ pipenv install
    ```
-5. Run the `make`
+4. Run the `make`
    ```bash
-   $ pipenv run make
+   $ pipenv run python build.py
    ```
-6. After a successful build, the executable file can be found in the `./dist/` directory
+5. After a successful build, the executable file can be found in the `./dist/exec` directory

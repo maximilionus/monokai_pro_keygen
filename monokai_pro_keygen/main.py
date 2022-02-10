@@ -77,9 +77,9 @@ def __process_input():
                                 )
 
         if selected_editor not in ('1', '2'):
-            __print_action("wrong input", is_failure=True)
+            _print_action("wrong input", is_failure=True)
         else:
-            __print_action("editor selected successfully")
+            _print_action("editor selected successfully")
             break
 
     while True:
@@ -87,13 +87,13 @@ def __process_input():
                                "\nprovide the email address (or press Enter to use '{}')"
                                "\n\n: ".format(__default_email))
         if len(selected_email) == 0:
-            __print_action("using the default '{}' email address".format(__default_email))
+            _print_action("using the default '{}' email address".format(__default_email))
             selected_email = __default_email
             break
         elif not email_regex.match(selected_email):
-            __print_action("provide the valid email address", is_failure=True)
+            _print_action("provide the valid email address", is_failure=True)
         else:
-            __print_action("using the '{}' email address".format(selected_email))
+            _print_action("using the '{}' email address".format(selected_email))
             break
 
     passed = False
@@ -105,10 +105,12 @@ def __process_input():
         passed = True
 
     if passed:
-        __print_action("key: {}".format(key), outline=True)
+        _print_action("key: {}".format(key), outline=True)
+
+    input("\npress 'Enter' to exit")
 
 
-def __print_action(text='', pre='', end='\n', is_failure=False, outline=False):
+def _print_action(text='', pre='', end='\n', is_failure=False, outline=False):
     mark = "⮡ ❌" if is_failure else "⮡ ✅"
     outline_sample = '\n----\n' if outline else ''
 
