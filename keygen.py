@@ -10,13 +10,47 @@ __default_email = 'maximilionuss@gmail.com'
 
 
 def keygen_vscode(email: str) -> str:
+    """
+    Keygen for Visual Studio Code
+
+    :param email: valid email address
+    :type email: str
+    :return: generated key for theme activation
+    :rtype: str
+    """
     filler_string = 'fd330f6f-3f41-421d-9fe5-de742d0c54c0'
     key_calculated = md5('{}{}'.format(filler_string, email).encode()).hexdigest()[:25]
 
+    return keygen_insert_separator(key_calculated)
+
+
+def keygen_sublime(email: str) -> str:
+    """
+    Keygen for Sublime Text 3
+
+    :param email: valid email address
+    :type email: str
+    :return: generated key for theme activation
+    :rtype: str
+    """
+    key_calculated = md5('{}'.format(email).encode()).hexdigest()[:25]
+
+    return keygen_insert_separator(key_calculated)
+
+
+def keygen_insert_separator(key_source: str) -> str:
+    """
+    Generate the final key, ready for usage
+
+    :param key_source: un-prepared key, basically raw md5 hash
+    :type key_source: str
+    :return: final key, ready for activation
+    :rtype: str
+    """
     counter = 1
     key_final = ''
 
-    for letter in key_calculated:
+    for letter in key_source:
         if counter % 5 == 0 and counter != 25:
             key_final += '-'
         else:
@@ -62,11 +96,16 @@ def __process_input():
             __print_action("using the '{}' email address".format(selected_email))
             break
 
+    passed = False
     if selected_editor == '1':  # VS Code
         key = keygen_vscode(selected_email)
-        __print_action("key: {}".format(key), outline=True)
+        passed = True
     elif selected_editor == '2':  # Sublime Text
-        pass
+        key = keygen_sublime(selected_email)
+        passed = True
+
+    if passed:
+        __print_action("key: {}".format(key), outline=True)
 
 
 def __print_action(text='', pre='', end='\n', is_failure=False, outline=False):
