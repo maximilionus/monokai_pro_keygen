@@ -28,6 +28,6 @@ Monokai Pro theme keygen for VSCode and Sublime Text
    ```
 5. Run the `make`
    ```bash
-   $ make
+   $ pipenv run make
    ```
 6. After a successful build, the executable file can be found in the `./dist/` directory
