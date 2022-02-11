@@ -1,3 +1,5 @@
+import tarfile
+import zipfile
 from platform import machine
 from shutil import make_archive, rmtree
 from sys import platform as sys_platform
@@ -51,14 +53,14 @@ if __name__ == '__main__':
         if not path.isdir(PACKED_DIR): mkdir(PACKED_DIR)
 
         archive_name = ARCHIVE_NAME_TEMPLATE.format(__version__, sys_platform, machine().lower())
-        if sys_platform == 'win32':
-            archive_type = 'zip'
-        else:
-            archive_type = 'gztar'
 
         try:
-            make_archive(path.join(PACKED_DIR, archive_name), archive_type, BUILD_PATH)
+            if sys_platform == 'win32':
+                make_archive(path.join(PACKED_DIR, archive_name), 'zip', BUILD_PATH)
+            else:
+                with tarfile.open(path.abspath(path.join(PACKED_DIR, archive_name + '.tar.gz')), "w:gz") as tar:
+                    tar.add(path.abspath(BUILD_PATH), arcname=archive_name)
         except Exception as e:
             _print_action('Packing failed: {}'.format(e), is_failure=True, outline=True)
         else:
-            _print_action('Successfull packing to "{}"'.format(path.abspath(path.join(PACKED_DIR, '{}.{}'.format(archive_name, archive_type)))), outline=True)
+            _print_action('Successfull packaging to "{}"'.format(path.abspath(path.join(PACKED_DIR))), outline=True)
