@@ -1,5 +1,4 @@
 import tarfile
-import zipfile
 from platform import machine
 from shutil import make_archive, rmtree
 from sys import platform as sys_platform
