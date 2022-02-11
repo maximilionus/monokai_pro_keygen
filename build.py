@@ -11,8 +11,8 @@ from PyInstaller.__main__ import run as pyi_run
 
 
 ARCHIVE_NAME_TEMPLATE = r'monokai_pro_keygen_v{0}_{1}_{2}'
-BUILD_PATH = './dist/exec'
-PACKED_DIR = './dist/packed'
+BUILD_PATH = './dist/exec/'
+PACKED_DIR = './dist/packed/'
 
 
 if __name__ == '__main__':
@@ -33,9 +33,9 @@ if __name__ == '__main__':
     pyi_params = []
 
     if args.mode == 'one_file':
-        pyi_params = ['./monokai_pro_keygen/main.py', '--clean', '-y', '--name', 'monokai_pro_keygen', '--icon', './data/icons/icon_main.ico', '--distpath', BUILD_PATH, '--onefile', '--runtime-tmpdir', './']
+        pyi_params = ['./monokai_pro_keygen/main.py', '--console', '--clean', '-y', '--name', 'monokai_pro_keygen', '--icon', './data/icons/icon_main.ico', '--distpath', BUILD_PATH, '--onefile', '--runtime-tmpdir', './']
     elif args.mode == 'one_dir':
-        pyi_params = ['./monokai_pro_keygen/main.py', '--clean', '-y', '--name', 'monokai_pro_keygen', '--icon', './data/icons/icon_main.ico', '--distpath', BUILD_PATH, '--onedir']
+        pyi_params = ['./monokai_pro_keygen/main.py', '--console', '--clean', '-y', '--name', 'monokai_pro_keygen', '--icon', './data/icons/icon_main.ico', '--distpath', BUILD_PATH, '--onedir']
 
     if path.isdir(BUILD_PATH):
         rmtree(path.abspath(BUILD_PATH))
