@@ -1,7 +1,7 @@
 import tarfile
 from platform import machine
 from shutil import make_archive, rmtree
-from sys import platform as sys_platform, stdout
+from sys import platform as sys_platform
 from os import path, chdir, mkdir
 from argparse import ArgumentParser
 
@@ -39,8 +39,6 @@ if __name__ == '__main__':
 
     if path.isdir(BUILD_PATH):
         rmtree(path.abspath(BUILD_PATH))
-
-    print("DEBUG::Encoding = {}".format(stdout.encoding))
 
     try:
         pyi_run(pyi_params)
