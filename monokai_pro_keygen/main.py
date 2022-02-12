@@ -111,7 +111,7 @@ def __process_input():
 
 
 def _print_action(text='', pre='', end='\n', is_failure=False, outline=False):
-    mark = ("⮡ ❌" if is_failure else "⮡ ✅") if sys.getdefaultencoding() == 'utf-8' else '->'  # Set the mark accordingly to provided `is_failure` param and check `utf-8`
+    mark = ("⮡ ❌" if is_failure else "⮡ ✅") if sys.stdout.encoding == 'utf-8' else '->'  # Set the mark accordingly to provided `is_failure` param and check `utf-8`
     outline_sample = '\n----\n' if outline else ''
 
     print(pre, outline_sample, mark, ' ' if len(text) > 0 else '', text, outline_sample, end=end)
