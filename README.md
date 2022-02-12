@@ -12,7 +12,7 @@
 
 ## About
 
-Monokai Pro theme keygen for VSCode and Sublime Text
+Monokai Pro theme keygen tool for **Visual Studio Code** and **Sublime Text**
 
 
 ## Usage
