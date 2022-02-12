@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import tarfile
 from platform import machine
 from shutil import make_archive, rmtree
