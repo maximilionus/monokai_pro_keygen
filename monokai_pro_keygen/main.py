@@ -7,32 +7,45 @@ from hashlib import md5
 __version__ = '1.0.0'
 __author__ = 'maximilionus'
 __default_email = 'maximilionuss@gmail.com'
+__email_regex = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
 
 
-def keygen_vscode(email: str) -> str:
+def keygen_vscode(email: str, disable_email_check=False) -> str:
     """
     Keygen for Visual Studio Code
 
     :param email: valid email address
     :type email: str
+    :param disable_email_check: disable check for valid `email` address input, defaults to False
+    :type disable_email_check: bool, optional
+    :raises ValueError: if provided `email` is not valid
     :return: generated key for theme activation
     :rtype: str
     """
+    if not disable_email_check:
+        _verify_email(email)
+
     filler_string = 'fd330f6f-3f41-421d-9fe5-de742d0c54c0'
     key_calculated = md5('{}{}'.format(filler_string, email).encode()).hexdigest()[:25]
 
     return keygen_insert_separator(key_calculated)
 
 
-def keygen_sublime(email: str) -> str:
+def keygen_sublime(email: str, disable_email_check=False) -> str:
     """
     Keygen for Sublime Text 3
 
     :param email: valid email address
     :type email: str
+    :param disable_email_check: disable check for valid `email` address input, defaults to False
+    :type disable_email_check: bool, optional
+    :raises ValueError: if provided `email` is not valid
     :return: generated key for theme activation
     :rtype: str
     """
+    if not disable_email_check:
+        _verify_email(email)
+
     key_calculated = md5('{}'.format(email).encode()).hexdigest()[:25]
 
     return keygen_insert_separator(key_calculated)
@@ -52,7 +65,7 @@ def keygen_insert_separator(key_source: str) -> str:
 
     for letter in key_source:
         if counter % 5 == 0 and counter != 25:
-            key_final += '-'
+            key_final += letter + '-'
         else:
             key_final += letter
 
@@ -64,7 +77,6 @@ def keygen_insert_separator(key_source: str) -> str:
 def __process_input():
     selected_editor = ''
     selected_email = ''
-    email_regex = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
 
     print("Monokai Pro Theme - Key Generator (v{})\nby @{}".format(__version__, __author__))
 
@@ -90,18 +102,21 @@ def __process_input():
             _print_action("using the default '{}' email address".format(__default_email))
             selected_email = __default_email
             break
-        elif not email_regex.match(selected_email):
-            _print_action("provide the valid email address", is_failure=True)
+
+        try:
+            _verify_email(selected_email)
+        except ValueError as e:
+            _print_action('{}'.format(e), is_failure=True)
         else:
             _print_action("using the '{}' email address".format(selected_email))
             break
 
     passed = False
     if selected_editor == '1':  # VS Code
-        key = keygen_vscode(selected_email)
+        key = keygen_vscode(selected_email, True)
         passed = True
     elif selected_editor == '2':  # Sublime Text
-        key = keygen_sublime(selected_email)
+        key = keygen_sublime(selected_email, True)
         passed = True
 
     if passed:
@@ -123,6 +138,11 @@ def _print_action(text='', pre='', end='\n', is_failure=False, outline=False):
     outline_sample = '\n----\n' if outline else ''
 
     print(pre, outline_sample, mark, ' ' if len(text) > 0 else '', text, outline_sample, end=end)
+
+
+def _verify_email(email: str) -> None:
+    if not __email_regex.match(email):
+        raise ValueError('provide the valid email address')
 
 
 def __handle_sigint():
