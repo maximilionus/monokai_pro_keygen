@@ -1,10 +1,8 @@
-# coding: utf-8
-
 import tarfile
 from platform import machine
 from shutil import make_archive, rmtree
 from sys import platform as sys_platform
-from os import path, chdir, mkdir
+from os import path, chdir, mkdir, system as shell_exec
 from argparse import ArgumentParser
 
 from monokai_pro_keygen.main import __version__, _print_action
@@ -18,6 +16,10 @@ PACKED_DIR = './dist/packed/'
 
 
 if __name__ == '__main__':
+    if sys_platform == 'win32':
+        # Force 'utf-8'
+        shell_exec('chcp 65001')
+
     chdir(path.dirname(path.abspath(__file__)))
 
     parser = ArgumentParser(
