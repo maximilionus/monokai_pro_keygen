@@ -7,7 +7,7 @@
 body {
     color: var(--color-fg);
     background-color: var(--color-bg);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,11 +79,16 @@ body {
     box-shadow: none;
 }
 
+.form__field:invalid {
+    border-width: 3px;
+    border-image: linear-gradient(to right, #df3105, #ef38a9);
+    border-image-slice: 1;
+}
+
 /* Confirm button */
 .btn41-43 {
     text-decoration: none;
     padding: 10px 25px;
-    font-family: "Roboto", sans-serif;
     font-weight: 500;
     background: transparent;
     outline: none !important;
@@ -107,12 +112,12 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
-    background: #9b9b9b;
+    background: #ffffff;
     transition: all 0.3s ease;
   }
 
   .btn-43:hover {
-    color: rgb(0, 0, 0);
+    color: var(--color-bg);
   }
 
   .btn-43:hover:after {
