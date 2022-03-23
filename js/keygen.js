@@ -22,7 +22,7 @@ function keygen_sublime(email) {
 }
 
 function keygen_insert_separator(key_raw) {
-    var key_final = '';
+    let key_final = '';
 
     for (var i = 0; i < key_raw.length; i++) {
         if (i % 5 == 0 && i != 25 && i != 0) {
