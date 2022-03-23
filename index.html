@@ -9,8 +9,12 @@
 <body>
     <div class="form__group field" align="right">
         <input type="email" class="form__field" id="input_email"
-               placeholder="email" size="30" required>
+        placeholder="email" size="30" required>
         <label for="input_email" class="form__label">email</label>
-        <a href="" class="btn41-43 btn-43">generate</a>
+
+        <a class="btn41-43 btn-43" id="btn_generate" onclick="call_keygen('vscode')">generate</a>
     </div>
+
+    <script src="./js/min_md5.js"></script>
+    <script src="./js/keygen.js"></script>
 </body>
