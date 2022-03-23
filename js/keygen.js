@@ -1,10 +1,12 @@
 function call_keygen(mode) {
     input_email = document.getElementById('input_email').value
+    vs_code_mode = document.querySelector('input[id="radio_mode_vscode"]:checked');
+    sublime_code_mode = document.querySelector('input[id="radio_mode_sublime"]:checked');
 
-    if (mode == 'vscode') {
-        alert(keygen_vscode(input_email));
-    } else {
-        keygen_sublime(input_email);
+    if (vs_code_mode !== null) {
+        display_output(keygen_vscode(input_email));
+    } else if (sublime_code_mode !== null) {
+        display_output(keygen_sublime(input_email));
     }
 }
 

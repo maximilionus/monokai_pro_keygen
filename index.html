@@ -7,6 +7,16 @@
 </head>
 
 <body>
+    <form action="">
+        <label class="form-control">
+            <input type="radio" name="radio" id="radio_mode_vscode" checked />
+            VS Code</label>
+        <label class="form-control">
+            <input type="radio" id="radio_mode_sublime" name="radio" />
+            Sublime
+        </label>
+    </form>
+
     <div class="form__group field" align="right">
         <input type="email" class="form__field" id="input_email"
         placeholder="email" size="30" required>
@@ -15,6 +25,12 @@
         <a class="btn41-43 btn-43" id="btn_generate" onclick="call_keygen('vscode')">generate</a>
     </div>
 
+    <div class="result_output_field">
+        <span class="result_output_text"></span>
+    </div>
+
+
+    <script src="./js/core.js"></script>
     <script src="./js/min_md5.js"></script>
     <script src="./js/keygen.js"></script>
 </body>
