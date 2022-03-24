@@ -1,15 +1,3 @@
-function call_keygen(mode) {
-    input_email = document.getElementById('input_email').value
-    vs_code_mode = document.querySelector('input[id="radio_mode_vscode"]:checked');
-    sublime_code_mode = document.querySelector('input[id="radio_mode_sublime"]:checked');
-
-    if (vs_code_mode !== null) {
-        display_output(keygen_vscode(input_email));
-    } else if (sublime_code_mode !== null) {
-        display_output(keygen_sublime(input_email));
-    }
-}
-
 function keygen_vscode(email) {
     filler_string = 'fd330f6f-3f41-421d-9fe5-de742d0c54c0';
     key_calculated = md5(filler_string + email).substring(0, 25);

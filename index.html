@@ -2,6 +2,9 @@
 
 <head>
     <title>Monokai Pro Keygen</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Monokai Pro theme license key generator for Visual Studio Code and Sublime Editor">
+    <meta name="keywords" content="monokai pro, keygen, vscode, sublime">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="icon" type="image/x-icon" href="./img/icon_main.ico">
 </head>
@@ -17,18 +20,18 @@
         </label>
     </form>
 
-    <div class="form__group field" align="right">
+    <div class="form__group field" id="email_input_field" align="right">
         <input type="email" class="form__field" id="input_email"
-        placeholder="email" size="30" required>
+        placeholder="email" size="30"
+        onkeyup="input_field_keypress_handler(event)" required>
         <label for="input_email" class="form__label">email</label>
 
-        <a class="btn41-43 btn-43" id="btn_generate" onclick="call_keygen('vscode')">generate</a>
+        <a class="btn41-43 btn-43" id="btn_generate" onclick="call_keygen('vscode')" disabled>generate</a>
     </div>
 
     <div class="result_output_field">
         <span class="result_output_text"></span>
     </div>
-
 
     <script src="./js/core.js"></script>
     <script src="./js/min_md5.js"></script>
