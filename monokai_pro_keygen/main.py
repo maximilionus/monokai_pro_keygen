@@ -2,9 +2,11 @@ import re
 import sys
 import signal
 from hashlib import md5
+from getpass import getpass
+from shutil import get_terminal_size
 
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __author__ = 'maximilionus'
 __default_email = 'maximilionuss@gmail.com'
 __email_regex = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
@@ -78,11 +80,12 @@ def __process_input():
     selected_editor = ''
     selected_email = ''
 
-    print("Monokai Pro Theme - Key Generator (v{})\nby @{}".format(__version__, __author__))
+    __draw_sepline()
+    print("Monokai Pro Theme - Serial Key Generator (v{})\nby @{}".format(__version__, __author__))
 
     while True:
-        selected_editor = input("----"
-                                "\nselect your editor:"
+        __draw_sepline()
+        selected_editor = input("\nSelect your editor:"
                                 "\n    1 - Visual Studio Code (VSCode)"
                                 "\n    2 - Sublime Text"
                                 "\n\n: "
@@ -95,8 +98,8 @@ def __process_input():
             break
 
     while True:
-        selected_email = input("----"
-                               "\nprovide the email address (or press Enter to use '{}')"
+        __draw_sepline()
+        selected_email = input("\nProvide the valid email address (or press Enter to use '{}')"
                                "\n\n: ".format(__default_email))
         if len(selected_email) == 0:
             _print_action("using the default '{}' email address".format(__default_email))
@@ -122,11 +125,11 @@ def __process_input():
     if passed:
         _print_action("key: {}".format(key), outline=True)
 
-    input("\npress 'Enter' to exit")
+    getpass("\nPress 'Enter' to exit")
 
 
-def _print_action(text='', pre='', end='\n', is_failure=False, outline=False):
-    # Set the mark samples accordingly to `utf-8`
+def _print_action(text='', end='\n', is_failure=False, outline=False):
+    # Check if `utf-8` encoding is used and modify output for correct printing
     if sys.stdout.encoding == 'utf-8':
         mark_fail = '⮡ ❌'
         mark_succ = '⮡ ✅'
@@ -135,14 +138,23 @@ def _print_action(text='', pre='', end='\n', is_failure=False, outline=False):
         mark_succ = '-> [V]'
 
     mark = mark_fail if is_failure else mark_succ
-    outline_sample = '\n----\n' if outline else ''
 
-    print(pre, outline_sample, mark, ' ' if len(text) > 0 else '', text, outline_sample, end=end)
+    if outline: __draw_sepline()
+    print(mark, ' ' if len(text) > 0 else '', text, end=end)
+    if outline: __draw_sepline()
 
 
 def _verify_email(email: str) -> None:
     if not __email_regex.match(email):
         raise ValueError('provide the valid email address')
+
+
+def __draw_sepline():
+    terminal_width = get_terminal_size()[0]
+    calculated_width = terminal_width - terminal_width // 2
+    calculated_width = calculated_width if calculated_width >= 20 else 20
+
+    print('-' * calculated_width)
 
 
 def __handle_sigint():
