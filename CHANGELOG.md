@@ -1,4 +1,4 @@
-# 1.0.1 - 2022.03.27
+# 1.0.1 - 2022.03.28
 ## Changed
 - Enhanced terminal output readability
   - Dynamically-sized separators instead of static (`----`), based on terminal width
