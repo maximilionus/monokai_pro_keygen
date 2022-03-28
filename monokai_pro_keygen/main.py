@@ -125,7 +125,8 @@ def __process_input():
     if passed:
         _print_action("key: {}".format(key), outline=True)
 
-    getpass("\nPress 'Enter' to exit")
+    if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+        getpass("\nPress 'Enter' to exit")
 
 
 def _print_action(text='', end='\n', is_failure=False, outline=False):
