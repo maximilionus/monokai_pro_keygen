@@ -35,6 +35,7 @@ Monokai Pro theme keygen tool for **Visual Studio Code** and **Sublime Text**
     ```bash
     python3 -c 'import urllib.request;exec(urllib.request.urlopen("https://github.com/maximilionus/monokai_pro_keygen/raw/master/monokai_pro_keygen/main.py").read())'
     ```
+    > On Windows platform replace `python3` with `python`
 
 
 ## CLI
