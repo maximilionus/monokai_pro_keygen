@@ -1,4 +1,7 @@
-# 1.0.2 - develop/python
+# 1.1.0 - develop/python
+## Added
+- New `cli` feature that will allow to provide all required arguments for keygen with just one command.
+
 ## Changed
 - Exit prompt will now be displayed only in executables *(frozen with `pyinstaller`)*, running from source code will exit automatically after displaying the result.
 
