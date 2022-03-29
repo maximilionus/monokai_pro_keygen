@@ -1,12 +1,15 @@
 import re
 import sys
 import signal
+
 from hashlib import md5
 from getpass import getpass
 from shutil import get_terminal_size
 
+from argparse import ArgumentParser
 
-__version__ = '1.0.1'
+
+__version__ = '1.1.0'
 __author__ = 'maximilionus'
 __default_email = 'maximilionuss@gmail.com'
 __email_regex = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
@@ -125,7 +128,8 @@ def __process_input():
     if passed:
         _print_action("key: {}".format(key), outline=True)
 
-    getpass("\nPress 'Enter' to exit")
+    if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+        getpass("\nPress 'Enter' to exit")
 
 
 def _print_action(text='', end='\n', is_failure=False, outline=False):
@@ -161,6 +165,37 @@ def __handle_sigint():
     signal.signal(signal.SIGINT, lambda signum, frame: sys.exit(1))
 
 
+def __handle_cli() -> bool:
+    cli_used = False
+    parser = ArgumentParser(description='Monokai Pro theme license key generator for Visual Studio Code and Sublime Text')
+    parser.add_argument('--email', '-E', help='provide the valid email address, defaults to \'maximilionuss@gmail.com\'', type=str, default=__default_email, action='store')
+    parser.add_argument('--editor', '-M', help='select editor (\'code\' - VS Code, \'sublime\' - Sublime Text)', type=str, action='store', choices=('code', 'sublime'))
+    parser.add_argument('--simple', help='print generated serial key without any decorations', action='store_true', default=False)
+
+    args = parser.parse_args()
+
+    if args.email is not None and args.editor is not None:
+        try: _verify_email(args.email)
+        except ValueError as e:
+            _print_action('{}'.format(e), is_failure=True)
+            sys.exit(1)
+
+        if args.editor == 'code':
+            key = keygen_vscode(args.email, disable_email_check=True)
+        else:
+            key = keygen_sublime(args.email, disable_email_check=True)
+
+        if args.simple:
+            print(key)
+        else:
+            _print_action("key: {}".format(key), outline=True)
+
+        cli_used = True
+
+    return cli_used
+
+
 if __name__ == '__main__':
-    __handle_sigint()
-    __process_input()
+    if not __handle_cli():
+        __handle_sigint()
+        __process_input()

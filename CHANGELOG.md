@@ -1,3 +1,12 @@
+# 1.1.0 - 2022.03.29
+## Added
+- New `cli` feature that will allow to provide all required arguments for keygen with just one command.
+  > Read more about this feature in [README](./README.md#cli).
+
+## Changed
+- Exit prompt will now be displayed only in executables *(built with `pyinstaller`)*, running from source code will exit automatically after displaying the result.
+
+
 # 1.0.1 - 2022.03.28
 ## Changed
 - Enhanced terminal output readability
