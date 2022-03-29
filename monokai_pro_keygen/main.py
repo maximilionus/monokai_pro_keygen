@@ -9,7 +9,7 @@ from shutil import get_terminal_size
 from argparse import ArgumentParser
 
 
-__version__ = '1.0.1'
+__version__ = '1.1.0'
 __author__ = 'maximilionus'
 __default_email = 'maximilionuss@gmail.com'
 __email_regex = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
