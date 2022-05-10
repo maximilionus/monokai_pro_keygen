@@ -1,5 +1,3 @@
-<img src="./data/icons/icon_main.png" height=128>
-
 # Monokai Pro - Keygen
 
 - [Monokai Pro - Keygen](#monokai-pro---keygen)
@@ -11,14 +9,14 @@
 
 
 ## Note
-New web version of serial key generator, which doesn't require any executables to be downloaded, was developed and and delpoyed to Github Pages, available [on this link](https://maximilionus.github.io/monokai_pro_keygen).
+New web version of serial key generator now deployed on Github Pages, available [on this link](https://maximilionus.github.io/monokai_pro_keygen).
 
-> Source code is also available on branch `page` of this repository
+> Source code is also available on `page` branch of this repository
 
 
 ## About
 
-Monokai Pro theme keygen tool for **Visual Studio Code** and **Sublime Text**
+Monokai Pro theme license key generation tool for **Visual Studio Code** and **Sublime Text**
 
 
 ## Usage
@@ -33,9 +31,8 @@ Monokai Pro theme keygen tool for **Visual Studio Code** and **Sublime Text**
 
 - Executing the command below in your command shell will launch a local python interpreter, load the main script *(`./monokai_pro_keygen/main.py`)* from this repository and execute it
     ```bash
-    python3 -c "import urllib.request;exec(urllib.request.urlopen('https://github.com/maximilionus/monokai_pro_keygen/raw/master/monokai_pro_keygen/main.py').read())"
+    python -c "import urllib.request;exec(urllib.request.urlopen('https://github.com/maximilionus/monokai_pro_keygen/raw/master/monokai_pro_keygen/main.py').read())"
     ```
-    > On Windows platform replace `python3` with `python`
 
 
 ## CLI
