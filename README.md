@@ -1,6 +1,6 @@
 # Monokai Pro - License Generator
 
-> **Note**
+> **Note**  
 > Web version of this serial key generator now deployed on Github Pages, available [on this link](https://maximilionus.github.io/monokai_pro_keygen)
 
 > Source code is also available on `page` branch of this repository
