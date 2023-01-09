@@ -1,22 +1,14 @@
-# Monokai Pro - Keygen
+# Monokai Pro - License Generator
 
-- [Monokai Pro - Keygen](#monokai-pro---keygen)
-  - [Note](#note)
-  - [About](#about)
-  - [Usage](#usage)
-  - [CLI](#cli)
-  - [Build](#build)
-
-
-## Note
-New web version of serial key generator now deployed on Github Pages, available [on this link](https://maximilionus.github.io/monokai_pro_keygen).
+> **Note**
+> Web version of this serial key generator now deployed on Github Pages, available [on this link](https://maximilionus.github.io/monokai_pro_keygen)
 
 > Source code is also available on `page` branch of this repository
 
 
 ## About
 
-Monokai Pro theme license key generation tool for **Visual Studio Code** and **Sublime Text**
+Monokai Pro theme license key generation tool for **Visual Studio Code** and **Sublime Text** editors
 
 
 ## Usage
@@ -42,40 +34,31 @@ Since version `1.1.0`, this tool now supports `cli` *(command line interface)* i
 This feature is available for all variants of this tool *(python version)* - [built executable](#binary), [web execution](#execute-from-web), source code run.
 
 ### Arguments
-| argument         | description                                                |
-| :--------------- | :--------------------------------------------------------- |
-| `--email`, `-E`  | valid email address, defaults to 'maximilionuss@gmail.com' |
-| `--editor`, `-M` | select editor ('code' - VS Code, 'sublime' - Sublime Text) |
-| `--simple`       | print generated serial key without any decorations         |
+| argument         | description                                                                       |
+| :--------------- | :-------------------------------------------------------------------------------- |
+| `--email`, `-E`  | valid email address, defaults to 'maximilionuss@gmail.com'                        |
+| `--editor`, `-M` | select editor ('code' - VS Code, 'sublime' - Sublime Text)                        |
+| `--simple`       | print generated serial key without any decorations *(Available only in CLI mode)* |
 
 ### Example
 ```bash
-$ ./monokai_pro_keygen -h
-usage: monokai_pro_keygen [-h] [--email EMAIL] [--editor {code,sublime}] [--simple]
-
-Monokai Pro theme license key generator for Visual Studio Code and Sublime Text
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --email EMAIL, -E EMAIL
-                        provide the valid email address, defaults to 'maximilionuss@gmail.com'
-  --editor {code,sublime}, -M {code,sublime}
-                        select editor ('code' - VS Code, 'sublime' - Sublime Text)
-  --simple              print generated serial key without any decorations
+$ ./monokai_pro_keygen -M code --simple
+XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
 ```
 
 
 ## Build
-1. Clone this repository
-2. Install the `pipenv` package
+1. Ensure that installed python 3 version is `3.11` or higher
+2. Clone this repository
+3. Install the `pipenv` package
    ```bash
    $ python -m pip install pipenv
    ```
-3. Install the project dependencies with `pipenv`
+4. Install the project dependencies with `pipenv`
    ```bash
    $ pipenv install
    ```
-4. Run the build script
+5. Run the build script
    ```bash
    $ pipenv run python build.py
    ```
@@ -83,4 +66,4 @@ optional arguments:
    > ```bash
    > $ pipenv run python build.py -h  # -h || --help
    > ```
-5. After a successful build, the executable file can be found in the `./dist/exec` directory
+6. After a successful build, the executable file can be found in the `./dist/exec` directory

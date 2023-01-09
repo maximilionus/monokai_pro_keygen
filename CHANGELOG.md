@@ -1,3 +1,8 @@
+# 1.1.1 - 2023.01.09
+## Changed
+- Enhanced the CLI arguments description
+
+
 # 1.1.0 - 2022.03.29
 ## Added
 - New `cli` feature that will allow to provide all required arguments for keygen with just one command.

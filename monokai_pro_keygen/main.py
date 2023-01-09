@@ -9,7 +9,8 @@ from shutil import get_terminal_size
 from argparse import ArgumentParser
 
 
-__version__ = '1.1.0'
+__version__ = '1.1.1'
+__app_name__ = 'Monokai Pro License Generator'
 __author__ = 'maximilionus'
 __default_email = 'maximilionuss@gmail.com'
 __email_regex = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
@@ -84,7 +85,7 @@ def __process_input():
     selected_email = ''
 
     __draw_sepline()
-    print("Monokai Pro Theme - Serial Key Generator (v{})\nby @{}".format(__version__, __author__))
+    print("{} version {}\nby @{}".format(__app_name__, __version__, __author__))
 
     while True:
         __draw_sepline()
@@ -167,10 +168,11 @@ def __handle_sigint():
 
 def __handle_cli() -> bool:
     cli_used = False
-    parser = ArgumentParser(description='Monokai Pro theme license key generator for Visual Studio Code and Sublime Text')
+    parser = ArgumentParser(description='{} for Visual Studio Code and Sublime Text'.format(__app_name__))
     parser.add_argument('--email', '-E', help='provide the valid email address, defaults to \'maximilionuss@gmail.com\'', type=str, default=__default_email, action='store')
     parser.add_argument('--editor', '-M', help='select editor (\'code\' - VS Code, \'sublime\' - Sublime Text)', type=str, action='store', choices=('code', 'sublime'))
-    parser.add_argument('--simple', help='print generated serial key without any decorations', action='store_true', default=False)
+    parser.add_argument('--simple', help='(CLI mode only) print generated serial key without any decorations', action='store_true', default=False)
+    parser.add_argument('--version', action='version', version='{} version {}'.format(__app_name__, __version__))
 
     args = parser.parse_args()
 
