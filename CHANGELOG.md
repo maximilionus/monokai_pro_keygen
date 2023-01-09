@@ -1,5 +1,9 @@
 # 1.1.1 - 2023.01.09
+## Added
+- New `--version` argument added to CLI
+
 ## Changed
+- Application output enhanced
 - Enhanced the CLI arguments description
 
 

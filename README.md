@@ -34,11 +34,12 @@ Since version `1.1.0`, this tool now supports `cli` *(command line interface)* i
 This feature is available for all variants of this tool *(python version)* - [built executable](#binary), [web execution](#execute-from-web), source code run.
 
 ### Arguments
-| argument         | description                                                                       |
-| :--------------- | :-------------------------------------------------------------------------------- |
-| `--email`, `-E`  | valid email address, defaults to 'maximilionuss@gmail.com'                        |
-| `--editor`, `-M` | select editor ('code' - VS Code, 'sublime' - Sublime Text)                        |
-| `--simple`       | print generated serial key without any decorations *(Available only in CLI mode)* |
+| argument         | description                                                        |
+| :--------------- | :----------------------------------------------------------------- |
+| `--email`, `-E`  | valid email address, defaults to 'maximilionuss@gmail.com'         |
+| `--editor`, `-M` | select editor ('code' - VS Code, 'sublime' - Sublime Text)         |
+| `--simple`       | (CLI mode only) print generated serial key without any decorations |
+| `--version`      | show program's version number and exit                             |
 
 ### Example
 ```bash
