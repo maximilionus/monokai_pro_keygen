@@ -15,7 +15,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: setup python
         uses: actions/setup-python@v4
@@ -33,7 +33,7 @@ jobs:
           python build.py --create-archive
 
       - name: attach executable to release
-        uses: AButler/upload-release-assets@v2.0
+        uses: AButler/upload-release-assets@v2.0.2
         with:
           files: './dist/packed/monokai_pro_keygen_v*.zip;./dist/packed/monokai_pro_keygen_v*.tar.gz'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
