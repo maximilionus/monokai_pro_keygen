@@ -1,3 +1,9 @@
+# 1.2.0 - 2023.03.28
+## Changed
+- New application icon
+- Project now builds on python `3.11`
+
+
 # 1.1.1 - 2023.01.09
 ## Added
 - New `--version` argument added to CLI

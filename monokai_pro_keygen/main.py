@@ -9,7 +9,7 @@ from shutil import get_terminal_size
 from argparse import ArgumentParser
 
 
-__version__ = '1.1.1'
+__version__ = '1.2.0'
 __app_name__ = 'Monokai Pro License Generator'
 __author__ = 'maximilionus'
 __default_email = 'maximilionuss@gmail.com'
