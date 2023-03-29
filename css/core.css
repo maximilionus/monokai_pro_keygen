@@ -1,0 +1,65 @@
+:root {
+    --bg-color: #0e0e0e;
+    --bg-secondary-color: #303030;
+    --color-primary: #ff9c5b;
+    --color-lightGrey: #d2d6dd;
+    --color-grey: #747681;
+    --color-darkGrey: #3f4144;
+    --color-error: #d43939;
+    --color-success: #28bd14;
+    --grid-maxWidth: 120rem;
+    --grid-gutter: 2rem;
+    --font-size: 1.6rem;
+    --font-color: #dddddd;
+    --font-family-sans: sans-serif;
+    --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+}
+
+body {
+    padding: 10%;
+}
+
+/*
+ * Disable padding on small screens.
+ * Why do I care? Because I CAN!
+ */
+@media screen and (max-width : 400px) {
+    body {
+        padding: 1%;
+    }
+}
+
+input, textarea {
+    background-color : var(--bg-secondary-color); 
+    color: var(--font-color);
+}
+
+.result_output_field {
+    opacity: 0;
+    margin-top: 10%;
+    overflow: scroll;
+    background: linear-gradient(to right, #ff6287, #ff9c5b);
+    background-size: 400% 400%;
+    border-radius: 4px;
+    transition: 0.4s ease-in-out;
+    animation: output_field_gradient 40s ease infinite;
+}
+
+.result_output_text {
+    white-space: nowrap;
+    color: #fff;
+    opacity: 0.95;
+    font-size: 24px;
+}
+
+@keyframes output_field_gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

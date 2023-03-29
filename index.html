@@ -5,36 +5,58 @@
     <meta charset="utf-8">
     <meta name="description" content="Monokai Pro theme license key generator for Visual Studio Code and Sublime Editor">
     <meta name="keywords" content="monokai pro, keygen, vscode, sublime">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <link rel="icon" type="image/x-icon" href="./img/icon_main.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/x-icon" href="img/icon_main.ico">
 
-    <script src="./js/min_md5.js"></script>
-    <script src="./js/keygen.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/chota.min.css">
+    <link rel="stylesheet" type="text/css" href="css/core.css">
+
+    <script src="js/core.js"></script>
+    <script src="js/md5.min.js"></script>
+    <script src="js/keygen.js"></script>
 </head>
 
 <body>
-    <form action="">
-        <label class="form-control">
-            <input type="radio" name="radio" id="radio_mode_vscode" checked />
-            VS Code</label>
-        <label class="form-control">
-            <input type="radio" id="radio_mode_sublime" name="radio" />
-            Sublime
-        </label>
-    </form>
+    <div align="center">
+        <img src="https://raw.githubusercontent.com/maximilionus/monokai_pro_keygen/master/data/icons/icon_main.png" width="125" style="margin-bottom: 10%;"/>
 
-    <div class="form__group field" id="email_input_field" align="right">
-        <input type="email" class="form__field" id="input_email"
-        placeholder="email" size="30"
-        onkeyup="input_field_keypress_handler(event)" required>
-        <label for="input_email" class="form__label">email</label>
-
-        <a class="btn41-43 btn-43" id="btn_generate" onclick="call_keygen('vscode')" disabled>generate</a>
+        <form action="">
+            <label class="form-control">
+                <input type="radio" name="radio" id="radio_mode_vscode" checked />
+                VS Code
+            </label>
+            <label class="form-control">
+                <input type="radio" id="radio_mode_sublime" name="radio" />
+                Sublime
+            </label>
+        </form>
     </div>
 
-    <div class="result_output_field">
+    <div class="container grouped" id="input_container">
+        <input type="email" id="input_email"
+            placeholder="Email" size="30"
+            onkeyup="input_field_keypress_handler(event)" required>
+
+        <button class="button primary" id="btn_generate" onclick="call_keygen('vscode')" disabled >Generate</button>
+    </div>
+
+    <div class="result_output_field card">
         <span class="result_output_text"></span>
     </div>
 
-    <script src="./js/main.js"></script>
+    <div class="card">
+        <p>
+            <b>⚠️ This project is inteded only for educational and testing purposes</b><br><br>
+
+            I'm not going to tell you stories about how bad piracy is or about how it's violating licenses and the law. Instead, I just want to ask you a favor. It's one of the best editor themes we have, that is still maintained by the author and fully compatible with all new features of <i>VS Code</i>, and if you want it to stay like this - please consider supporting its original author (<a href="https://monokai.nl/">Wimer Hazenberg</a>) by <a href="https://monokai.pro/">buying the license</a>. ❤️ Thank you!
+        </p>
+    </div>
+
+    <div class="card">
+        <p>
+            ❓ No, it doesn't send any data to any backend and <b>regex valid</b> email is only required for serial key generation.
+        </p>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
