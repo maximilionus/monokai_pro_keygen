@@ -25,6 +25,7 @@ function display_output(text_to_display) {
     let text_field = document.getElementsByClassName("result_output_text")[0];
 
     text_field.innerHTML = text_to_display;
+    output_field.style.visibility = "visible";
     output_field.style.opacity = 1;
 }
 

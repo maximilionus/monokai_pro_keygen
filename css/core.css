@@ -39,6 +39,7 @@ input, textarea {
 }
 
 .result_output_box {
+    visibility: hidden;
     opacity: 0;
     margin-top: 10%;
     white-space: nowrap;
@@ -61,9 +62,9 @@ input, textarea {
 }
 
 .prevent_select {
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #copyright_footer {
