@@ -34,25 +34,24 @@ function copy_key_to_clipboard() {
 }
 
 function input_field_keypress_handler(event) {
-    if (event.key === "Enter") {
-        call_keygen();
+    let input_container = document.querySelector('#input_container');
+    let email_input_field = input_container.children.input_email;
+    let button_generate = document.querySelector('#btn_generate');
+
+    if (email_input_field.value.length == 0) {
+        email_input_field.className = '';
+        button_generate.disabled = true;
+        return;
+    }
+
+    if (validateEmail(email_input_field.value) == true) {
+        email_input_field.className = 'success';
+        button_generate.disabled = false;
+        if (event.key === "Enter") {
+            call_keygen();
+        }
     } else {
-        let input_container = document.querySelector('#input_container');
-        let email_input_field = input_container.children.input_email;
-        let button_generate = document.querySelector('#btn_generate');
-
-        if (email_input_field.value.length == 0) {
-            email_input_field.className = '';
-            button_generate.disabled = true;
-            return;
-        }
-
-        if (validateEmail(email_input_field.value) == true) {
-            email_input_field.className = 'success';
-            button_generate.disabled = false;
-        } else {
-            email_input_field.className = 'error';
-            button_generate.disabled = true;
-        }
+        email_input_field.className = 'error';
+        button_generate.disabled = true;
     }
 }
