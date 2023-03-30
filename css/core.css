@@ -5,7 +5,7 @@
     --color-lightGrey: #d2d6dd;
     --color-grey: #747681;
     --color-darkGrey: #3f4144;
-    --color-error: #b66666;
+    --color-error: #c45555;
     --color-success: #61965a;
     --grid-maxWidth: 120rem;
     --grid-gutter: 2rem;
@@ -34,9 +34,14 @@ input, textarea {
     color: var(--font-color);
 }
 
-.result_output_field {
+.svg {
+    fill: var(--color-lightGrey);
+}
+
+.result_output_box {
     opacity: 0;
     margin-top: 10%;
+    white-space: nowrap;
     overflow: scroll;
     background: linear-gradient(to right, #ff6287, #ff9c5b);
     background-size: 400% 400%;
@@ -46,7 +51,6 @@ input, textarea {
 }
 
 .result_output_text {
-    white-space: nowrap;
     color: #fff;
     opacity: 0.95;
     font-size: 24px;
