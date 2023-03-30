@@ -56,6 +56,15 @@ input, textarea {
     font-size: 24px;
 }
 
+.copyright_footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: var(--bg-secondary-color);
+    text-align: center;
+}
+
 @keyframes output_field_gradient {
 	0% {
 		background-position: 0% 50%;
