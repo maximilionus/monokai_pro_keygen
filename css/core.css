@@ -23,7 +23,7 @@ body {
  * Disable padding on small screens.
  * Why do I care? Because I CAN!
  */
-@media screen and (max-width : 400px) {
+@media screen and (max-width : 425px) {
     body {
         padding: 1%;
     }
