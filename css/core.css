@@ -56,7 +56,17 @@ input, textarea {
     font-size: 24px;
 }
 
-.copyright_footer {
+.href_hidden {
+    color: var(--bg-secondary-color);
+}
+
+.prevent_select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+#copyright_footer {
     position: fixed;
     left: 0;
     bottom: 0;
