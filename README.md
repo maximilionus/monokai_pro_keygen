@@ -14,7 +14,7 @@ Monokai Pro theme license key generation tool for **Visual Studio Code** and **S
 > **Note**  
 > Web version of this serial key generator now deployed on Github Pages, available [on this link](https://maximilionus.github.io/monokai_pro_keygen)  
 >
-> Source code is also available on `page` branch of this repository
+> Source code is also available on `web` branch of this repository
 
 
 ## Usage
