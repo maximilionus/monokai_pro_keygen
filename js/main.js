@@ -4,10 +4,10 @@ var generated_key = '';
 
 function call_keygen() {
     let input_email = document.getElementById('input_email').value;
-    let vscode_mode = document.querySelector('input[id="radio_mode_vscode"]:checked');
-    let sublime_mode = document.querySelector('input[id="radio_mode_sublime"]:checked');
+    let vscode_mode = document.querySelector('input[id="radio-vscode"]:checked');
+    let sublime_mode = document.querySelector('input[id="radio-sublime"]:checked');
 
-    if (validateEmail(input_email) === null) {
+    if (validateEmail(input_email) === false) {
         return false;
     };
 
