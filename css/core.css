@@ -64,6 +64,10 @@ textarea {
     transition: ease-in 0.25s;
 }
 
+.editor-selector-group label:hover {
+    background: var(--color-lightGrey);
+}
+
 .editor-selector-group input[type='radio']:checked+label {
     background: linear-gradient(to top right, #ff6287, #ff9c5b 80%, #ffd766);
 }
