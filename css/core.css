@@ -61,6 +61,7 @@ textarea {
     width: 5em;
     height: fit-content;
     text-align: center;
+    transition: ease-in 0.25s;
 }
 
 .editor-selector-group input[type='radio']:checked+label {
@@ -111,6 +112,10 @@ textarea {
     width: 100%;
     color: var(--bg-secondary-color);
     text-align: center;
+}
+
+#btn_copy_to_clipboard {
+    min-width: fit-content;
 }
 
 @keyframes output_field_gradient {
