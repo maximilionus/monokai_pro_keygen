@@ -17,17 +17,17 @@
 </head>
 
 <body>
-    <div class="prevent_select" id="header-image" align="center">
+    <div class="prevent_select prevent_events" id="header-image" align="center">
         <img src="img/png/icon_main.png" width="125" />
 
     </div>
 
     <div class="editor-selector-group prevent_select">
         <input type="radio" name="selected-editor" value="vscode" id="radio-vscode" checked/><label for="radio-vscode">
-            <img src="img/svg/microsoft-visual-studio-code.svg" height="50" />
+            <img class="prevent_events" src="img/svg/microsoft-visual-studio-code.svg" height="50" />
         </label>
         <input type="radio" name="selected-editor" value="sublime" id="radio-sublime" /><label for="radio-sublime">
-            <img src="img/svg/sublime-text.svg" height="50" />
+            <img class="prevent_events" src="img/svg/sublime-text.svg" height="50" />
         </label>
     </div>
 
@@ -42,7 +42,7 @@
     <div class="result_output_box grouped">
         <!-- Enhance visual response to press -->
         <button class="button outline icon-only" id="btn_copy_to_clipboard" onclick="copy_key_to_clipboard()">
-            <img src="img/svg/content-copy.svg" class="svg-inverted" height="20"/>
+            <img src="img/svg/content-copy.svg" class="svg-inverted prevent_events" height="20"/>
         </button>
         <span class="result_output_text"></span>
     </div>
