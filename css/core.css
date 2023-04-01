@@ -90,6 +90,7 @@ textarea {
 }
 
 .result_output_text {
+    margin: auto;
     color: #fff;
     opacity: 0.95;
     font-size: 24px;
