@@ -32,6 +32,7 @@ function display_output(text_to_display) {
 function copy_key_to_clipboard() {
     // TODO: Add fallback for unsupported engines
     navigator.clipboard.writeText(generated_key);
+    window.alert("License code is copied to the clipboard");
 }
 
 function input_field_keypress_handler(event) {
