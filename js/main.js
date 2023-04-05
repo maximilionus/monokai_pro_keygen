@@ -31,8 +31,13 @@ function display_output(text_to_display) {
 
 function copy_key_to_clipboard() {
     // TODO: Add fallback for unsupported engines
-    navigator.clipboard.writeText(generated_key);
-    window.alert("License code is copied to the clipboard");
+    navigator.clipboard.writeText(generated_key)
+        .then(() => {
+            window.alert("License code is copied to the clipboard");
+        })
+        .catch(() => {
+            window.alert("Can not copy the license code to the clipboard. This feature is probably unsupported by your browser.");
+        });
 }
 
 function input_field_keypress_handler(event) {
