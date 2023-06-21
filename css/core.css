@@ -104,10 +104,6 @@ textarea {
     font-size: 24px;
 }
 
-.href_hidden {
-    color: var(--bg-secondary-color);
-}
-
 .prevent_select {
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -123,12 +119,14 @@ textarea {
 }
 
 #copyright_footer {
-    position: fixed;
     left: 0;
-    bottom: 0;
-    width: 100%;
-    color: var(--bg-secondary-color);
+    margin-top: 1em;
     text-align: center;
+    color: var(--bg-secondary-color);
+}
+
+#copyright_footer a {
+    color: var(--bg-secondary-color);
 }
 
 #btn_copy_to_clipboard {
