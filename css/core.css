@@ -62,11 +62,6 @@ textarea {
     width: 5em;
     height: fit-content;
     text-align: center;
-    transition: ease-in 0.2s;
-}
-
-.editor-selector-group label:hover {
-    border-radius: 10px;
 }
 
 .editor-selector-group input[type='radio']:checked+label {
