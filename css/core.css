@@ -16,6 +16,18 @@
     --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
 }
 
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #ffffff;
+        --bg-secondary-color: #d6d6d6;
+        --color-lightGrey: #cacaca;
+        --color-grey: #d1d1d1;
+        --color-darkGrey: #eeeeee;
+        --color-success: #69c55d;
+        --font-color: #303030;
+    }
+}
+
 body {
     padding-left: 10%;
     padding-right: 10%;
