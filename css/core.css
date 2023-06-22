@@ -18,6 +18,7 @@
 
 @media (prefers-color-scheme: light) {
     :root {
+        color-scheme: light;
         --bg-color: #ffffff;
         --bg-secondary-color: #d6d6d6;
         --color-lightGrey: #cacaca;
