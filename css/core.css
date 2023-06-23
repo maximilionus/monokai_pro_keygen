@@ -77,8 +77,12 @@ textarea {
     text-align: center;
 }
 
-.editor-selector-group input[type='radio']:checked+label {
-    background: linear-gradient(to top right, #ff6287, #ff9c5b 80%, #ffd766);
+.editor-selector-group #radio-vscode:checked+label {
+    background: linear-gradient(to top right, #89ccff, #a1fff2);
+}
+
+.editor-selector-group #radio-sublime:checked+label {
+    background: linear-gradient(to top right, #ffb685, #ffd86c);
 }
 
 .svg-inverted {
