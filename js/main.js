@@ -2,6 +2,14 @@
 var generated_key = '';
 
 
+function set_acccolor(variant) {
+    if (variant === 'code') {
+        document.documentElement.style.setProperty('--color-primary', '#36a8ff');
+    } else if (variant === 'sublime') {
+        document.documentElement.style.setProperty('--color-primary', '#ff9c5b');
+    }
+}
+
 function call_keygen() {
     let input_email = document.getElementById('input_email').value;
     let vscode_mode = document.querySelector('input[id="radio-vscode"]:checked');

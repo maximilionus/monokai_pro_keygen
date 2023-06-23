@@ -2,7 +2,7 @@
     color-scheme: dark;
     --bg-color: #0e0e0e;
     --bg-secondary-color: #303030;
-    --color-primary: #ff9c5b;
+    --color-primary: #36a8ff;
     --color-lightGrey: #d2d6dd;
     --color-grey: #747681;
     --color-darkGrey: #3f4144;
@@ -115,7 +115,7 @@ textarea {
     user-select: none;
 }
 
-.prevent_events { 
+.prevent_events {
     pointer-events: none;
 }
 

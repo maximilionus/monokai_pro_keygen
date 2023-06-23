@@ -23,10 +23,14 @@
     </div>
 
     <div class="editor-selector-group prevent_select">
-        <input type="radio" name="selected-editor" value="vscode" id="radio-vscode" checked/><label for="radio-vscode">
+        <input type="radio" name="selected-editor"
+        value="vscode" id="radio-vscode"
+        onclick="set_acccolor('code')" checked /><label for="radio-vscode">
             <img class="prevent_events" src="img/svg/microsoft-visual-studio-code.svg" height="50" />
         </label>
-        <input type="radio" name="selected-editor" value="sublime" id="radio-sublime" /><label for="radio-sublime">
+        <input type="radio" name="selected-editor"
+        value="sublime" id="radio-sublime"
+        onclick="set_acccolor('sublime')" /><label for="radio-sublime">
             <img class="prevent_events" src="img/svg/sublime-text.svg" height="50" />
         </label>
     </div>
