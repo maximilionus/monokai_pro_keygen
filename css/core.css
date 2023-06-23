@@ -89,26 +89,6 @@ textarea {
     filter: invert(1);
 }
 
-.result_output_box {
-    visibility: hidden;
-    opacity: 0;
-    margin-top: 10%;
-    white-space: nowrap;
-    overflow: scroll;
-    background: linear-gradient(to right, #ff6287, #ff9c5b);
-    background-size: 400% 400%;
-    border-radius: 4px;
-    transition: 0.4s ease-in-out;
-    animation: output_field_gradient 40s ease infinite;
-}
-
-.result_output_text {
-    margin: auto;
-    color: #fff;
-    opacity: 0.95;
-    font-size: 24px;
-}
-
 .prevent_select {
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -121,6 +101,26 @@ textarea {
 
 #header-image {
     margin-bottom: 50px;
+}
+
+#result_output_box {
+    visibility: hidden;
+    opacity: 0;
+    margin-top: 10%;
+    white-space: nowrap;
+    overflow: scroll;
+    background: linear-gradient(to right, #ff6287, #ff9c5b);
+    background-size: 400% 400%;
+    border-radius: 4px;
+    transition: 0.4s ease-in-out;
+    animation: output_field_gradient 40s ease infinite;
+}
+
+#result_output_text {
+    margin: auto;
+    color: #fff;
+    opacity: 0.95;
+    font-size: 24px;
 }
 
 #copyright_footer {

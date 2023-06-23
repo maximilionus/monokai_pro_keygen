@@ -1,7 +1,3 @@
-// Global vars
-var generated_key = '';
-
-
 function set_acccolor(variant) {
     if (variant === 'code') {
         document.documentElement.style.setProperty('--color-primary', '#36a8ff');
@@ -11,6 +7,7 @@ function set_acccolor(variant) {
 }
 
 function call_keygen() {
+    let generated_key = '';
     let input_email = document.getElementById('input_email').value;
     let vscode_mode = document.querySelector('input[id="radio-vscode"]:checked');
     let sublime_mode = document.querySelector('input[id="radio-sublime"]:checked');
@@ -29,8 +26,8 @@ function call_keygen() {
 }
 
 function display_output(text_to_display) {
-    let output_field = document.getElementsByClassName("result_output_box")[0];
-    let text_field = document.getElementsByClassName("result_output_text")[0];
+    let output_field = document.getElementById("result_output_box");
+    let text_field = document.getElementById("result_output_text");
 
     text_field.innerHTML = text_to_display;
     output_field.style.visibility = "visible";
@@ -38,8 +35,10 @@ function display_output(text_to_display) {
 }
 
 function copy_key_to_clipboard() {
+    let key_str = document.getElementById('result_output_text').textContent;
+
     // TODO: Add fallback for unsupported engines
-    navigator.clipboard.writeText(generated_key)
+    navigator.clipboard.writeText(key_str)
         .then(() => {
             window.alert("License code is copied to the clipboard");
         })
@@ -49,9 +48,8 @@ function copy_key_to_clipboard() {
 }
 
 function input_field_keypress_handler(event) {
-    let input_container = document.querySelector('#input_container');
-    let email_input_field = input_container.children.input_email;
-    let button_generate = document.querySelector('#btn_generate');
+    let email_input_field = document.getElementById('input_email');
+    let button_generate = document.getElementById('btn_generate');
 
     if (email_input_field.value.length == 0) {
         email_input_field.className = '';
