@@ -1,3 +1,17 @@
+function get_selected_editor() {
+    let result_str = '';
+    let vscode_radio = document.querySelector('input[id="radio-vscode"]:checked');
+    let sublime_radio = document.querySelector('input[id="radio-sublime"]:checked');
+
+    if (vscode_radio !== null) {
+        result_str = 'code'
+    } else if (sublime_radio !== null) {
+        result_str = 'sublime'
+    }
+
+    return result_str;
+}
+
 function set_acccolor(variant) {
     if (variant === 'code') {
         document.documentElement.style.setProperty('--color-primary', '#36a8ff');
@@ -9,16 +23,15 @@ function set_acccolor(variant) {
 function call_keygen() {
     let generated_key = '';
     let input_email = document.getElementById('input_email').value;
-    let vscode_mode = document.querySelector('input[id="radio-vscode"]:checked');
-    let sublime_mode = document.querySelector('input[id="radio-sublime"]:checked');
+    let selected_editor = get_selected_editor();
 
     if (validateEmail(input_email) === false) {
         return false;
     };
 
-    if (vscode_mode !== null) {
+    if (selected_editor === 'code') {
         generated_key = keygen_vscode(input_email);
-    } else if (sublime_mode !== null) {
+    } else if (selected_editor === 'sublime') {
         generated_key = keygen_sublime(input_email);
     }
 
@@ -28,6 +41,16 @@ function call_keygen() {
 function display_output(text_to_display) {
     let output_field = document.getElementById("result_output_box");
     let text_field = document.getElementById("result_output_text");
+    let selected_editor = get_selected_editor();
+
+    // Modify accent colors for outbut box bg gradient depending on the selected editor
+    if (selected_editor == 'code') {
+        document.documentElement.style.setProperty('--color-outputbox-0', '#2a78b4');
+        document.documentElement.style.setProperty('--color-outputbox-1', '#3e468a');
+    } else if (selected_editor == 'sublime') {
+        document.documentElement.style.setProperty('--color-outputbox-0', '#ff6287');
+        document.documentElement.style.setProperty('--color-outputbox-1', '#ff9c5b');
+    }
 
     text_field.innerHTML = text_to_display;
     output_field.style.visibility = "visible";

@@ -8,6 +8,8 @@
     --color-darkGrey: #3f4144;
     --color-error: #c45555;
     --color-success: #61965a;
+    --color-outputbox-0: #2a78b4;
+    --color-outputbox-1: #3e468a;
     --grid-maxWidth: 120rem;
     --grid-gutter: 2rem;
     --font-size: 1.6rem;
@@ -109,7 +111,11 @@ textarea {
     margin-top: 10%;
     white-space: nowrap;
     overflow: scroll;
-    background: linear-gradient(to right, #ff6287, #ff9c5b);
+    background: linear-gradient(
+        to right,
+        var(--color-outputbox-0),
+        var(--color-outputbox-1)
+    );
     background-size: 400% 400%;
     border-radius: 4px;
     transition: 0.4s ease-in-out;
