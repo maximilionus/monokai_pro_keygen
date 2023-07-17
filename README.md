@@ -9,7 +9,7 @@ Monokai Pro theme license key generation tool for **Visual Studio Code** and **S
 > **Warning**  
 > **This project is intended only for educational and testing purposes.**  
 >
-> I'm not going to tell you stories about how bad piracy is or about how it's violating licenses and the law. Instead, I just want to ask you a favor. It's one of the best editor themes we have, that is still maintained by the author and fully compatible with all new features of *VS Code*, and if you want it to stay like this - please consider supporting its original author ([Wimer Hazenberg](https://monokai.nl/)) by [buying the license](https://monokai.pro/). ❤️ Thank you!
+> I'm not going to tell you stories about how bad piracy is or how it violates licenses and the law. Instead, I just want to ask you a favor. It's one of the best editor themes we have that is still maintained by the author and fully compatible with all new features of *VS Code*, and if you want it to stay like this, please consider supporting its original author ([Wimer Hazenberg](https://monokai.nl/)) by [buying the license](https://monokai.pro/). ❤️ Thank you!
 
 > **Note**  
 > Web version of this serial key generator now deployed on Github Pages, available [on this link](https://maximilionus.github.io/monokai_pro_keygen)  
