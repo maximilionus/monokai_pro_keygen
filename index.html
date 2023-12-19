@@ -53,8 +53,9 @@
 
     <div class="card">
         <p>
-            <a class="text-primary"<b>⚠️ This project is intended only for educational and testing purposes.</b></a><br><br>
-
+            <b>⚠️ This project is intended only for educational and testing purposes.</b>
+        </p>
+        <p>
             Please consider supporting the original author (<a href="https://monokai.nl/">Wimer Hazenberg</a>) of this fully compatible and well-maintained editor theme, which is one of the best we have for VS Code and Sublime Text. <a href="https://monokai.pro/">Buying</a> a license would help ensure its continued availability and functionality. ❤️ Thank you!
         </p>
     </div>
@@ -63,6 +64,32 @@
         <p>
             ❓ No, it does not send any data to any backend and <b>regex valid</b> email is only required for serial key generation.
         </p>
+    </div>
+
+    <div class="card">
+        <h3>Applying the license</h3>
+        <h4>Sublime Text 3</h4>
+        <ol>
+            <li>Open ST3 and ensure you have Monokai Pro installed. </li>
+            <li>Open up the user preferences for the theme (<code>Preferences</code> &gt; <code>Package Settings</code> &gt; <code>Theme - Monokai Pro</code> &gt; <code>Settings - User</code>).</li>
+            <li>
+                <p>Copy this text into the file, with the placeholder values changed appropriately:</p>
+                <pre><code class="lang-json">{
+                  <span class="hljs-attr">"email"</span>: <span class="hljs-string">"YOUR_EMAIL_GOES_HERE"</span>,
+                  <span class="hljs-attr">"license_key"</span>: <span class="hljs-string">"YOUR_LICENSE_GOES_HERE"</span>
+                }
+                </code></pre>
+            </li>
+            <li>Save the file and restart ST3, and you should see a thank you pop-up message. You are now running an activated theme.</li>
+        </ol>
+        <h4>Visual Studio Code</h4>
+        <ol>
+            <li>Open VS Code and ensure you have Monokai Pro installed.</li>
+            <li>Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> to open the command palette.</li>
+            <li>Search for <code>Monokai Pro</code> and select the option <code>Monokai Pro - enter license</code>.</li>
+            <li>Follow the prompts on-screen to enter your email and license key.</li>
+            <li>You will finally see a thank you pop-up message. You are now running an activated theme.</li>
+        </ol>
     </div>
 
     <div id="copyright_footer">
