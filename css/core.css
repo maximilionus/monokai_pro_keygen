@@ -14,8 +14,9 @@
     --grid-gutter: 2rem;
     --font-size: 1.6rem;
     --font-color: #dddddd;
-    --font-family-sans: sans-serif;
-    --font-family-mono: monaco, 'Consolas', 'Lucida Console', monospace;
+    --font-family-sans: font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --font-family-mono: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
 }
 
 @media (prefers-color-scheme: light) {
@@ -40,8 +41,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 input,
