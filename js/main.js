@@ -4,9 +4,9 @@ function get_selected_editor() {
     let sublime_radio = document.querySelector('input[id="radio-sublime"]:checked');
 
     if (vscode_radio !== null) {
-        result_str = 'code'
+        result_str = 'code';
     } else if (sublime_radio !== null) {
-        result_str = 'sublime'
+        result_str = 'sublime';
     }
 
     return result_str;
@@ -27,7 +27,7 @@ function call_keygen() {
 
     if (validateEmail(input_email) === false) {
         return false;
-    };
+    }
 
     if (selected_editor === 'code') {
         generated_key = keygen_vscode(input_email);
@@ -39,8 +39,8 @@ function call_keygen() {
 }
 
 function display_output(text_to_display) {
-    let output_field = document.getElementById("result_output_box");
-    let text_field = document.getElementById("result_output_text");
+    let output_field = document.getElementById('result_output_box');
+    let text_field = document.getElementById('result_output_text');
     let selected_editor = get_selected_editor();
 
     // Modify accent colors for outbut box bg gradient depending on the selected editor
@@ -53,7 +53,7 @@ function display_output(text_to_display) {
     }
 
     text_field.innerHTML = text_to_display;
-    output_field.style.visibility = "visible";
+    output_field.style.visibility = 'visible';
     output_field.style.opacity = 1;
 }
 
@@ -61,12 +61,15 @@ function copy_key_to_clipboard() {
     let key_str = document.getElementById('result_output_text').textContent;
 
     // TODO: Add fallback for unsupported engines
-    navigator.clipboard.writeText(key_str)
+    navigator.clipboard
+        .writeText(key_str)
         .then(() => {
-            window.alert("License code is copied to the clipboard");
+            window.alert('License code is copied to the clipboard');
         })
         .catch(() => {
-            window.alert("Can not copy the license code to the clipboard. This feature is probably unsupported by your browser.");
+            window.alert(
+                'Can not copy the license code to the clipboard. This feature is probably unsupported by your browser.'
+            );
         });
 }
 
@@ -83,7 +86,7 @@ function input_field_keypress_handler(event) {
     if (validateEmail(email_input_field.value) == true) {
         email_input_field.className = 'success';
         button_generate.disabled = false;
-        if (event.key === "Enter") {
+        if (event.key === 'Enter') {
             call_keygen();
         }
     } else {

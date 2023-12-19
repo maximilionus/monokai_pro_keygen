@@ -15,7 +15,7 @@
     --font-size: 1.6rem;
     --font-color: #dddddd;
     --font-family-sans: sans-serif;
-    --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+    --font-family-mono: monaco, 'Consolas', 'Lucida Console', monospace;
 }
 
 @media (prefers-color-scheme: light) {
@@ -42,7 +42,7 @@ body {
  * Disable padding on small screens.
  * Why do I care? Because I CAN!
  */
-@media screen and (max-width : 425px) {
+@media screen and (max-width: 425px) {
     body {
         padding: 1%;
     }
@@ -79,11 +79,11 @@ textarea {
     text-align: center;
 }
 
-.editor-selector-group #radio-vscode:checked+label {
+.editor-selector-group #radio-vscode:checked + label {
     background: linear-gradient(to top right, #89ccff, #a1fff2);
 }
 
-.editor-selector-group #radio-sublime:checked+label {
+.editor-selector-group #radio-sublime:checked + label {
     background: linear-gradient(to top right, #ffb685, #ffd86c);
 }
 
@@ -111,11 +111,7 @@ textarea {
     margin-top: 10%;
     white-space: nowrap;
     overflow: scroll;
-    background: linear-gradient(
-        to right,
-        var(--color-outputbox-0),
-        var(--color-outputbox-1)
-    );
+    background: linear-gradient(to right, var(--color-outputbox-0), var(--color-outputbox-1));
     background-size: 400% 400%;
     border-radius: 4px;
     transition: 0.4s ease-in-out;
