@@ -1,3 +1,7 @@
+document.getElementById('radio-vscode').click();
+
+// ---------------------------------
+
 function get_selected_editor() {
     let result_str = '';
     let vscode_radio = document.querySelector('input[id="radio-vscode"]:checked');
@@ -12,12 +16,33 @@ function get_selected_editor() {
     return result_str;
 }
 
+function set_editor(editor) {
+    set_acccolor(editor);
+    set_apply_license_explanation(editor);
+}
+
 function set_acccolor(variant) {
     if (variant === 'code') {
         document.documentElement.style.setProperty('--color-primary', '#36a8ff');
     } else if (variant === 'sublime') {
         document.documentElement.style.setProperty('--color-primary', '#ff9c5b');
     }
+}
+function set_apply_license_explanation(editor) {
+    const explanation_elements = document.querySelectorAll('[data-license-explanation]');
+
+    explanation_elements.forEach((element) => {
+        if (element.dataset.licenseExplanation === editor) {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    });
+}
+function update_license_json(email, key) {
+    const license_json = JSON.stringify({ email: email, license_key: key }, null, 2);
+    document.getElementById('license-json').textContent = license_json;
+    document.getElementById('license-explanation-update-placeholder').style.display = 'none';
 }
 
 function call_keygen() {
@@ -42,6 +67,7 @@ function display_output(text_to_display) {
     let output_field = document.getElementById('result_output_box');
     let text_field = document.getElementById('result_output_text');
     let selected_editor = get_selected_editor();
+    let email_field = document.getElementById('input_email');
 
     // Modify accent colors for outbut box bg gradient depending on the selected editor
     if (selected_editor == 'code') {
@@ -53,8 +79,9 @@ function display_output(text_to_display) {
     }
 
     text_field.innerHTML = text_to_display;
-    output_field.style.visibility = 'visible';
-    output_field.style.opacity = 1;
+    output_field.style.display = 'block';
+
+    update_license_json(email_field.value, text_to_display);
 }
 
 function copy_key_to_clipboard() {
