@@ -87,16 +87,18 @@ function display_output(text_to_display) {
 function copy_key_to_clipboard() {
     let key_str = document.getElementById('result_output_text').textContent;
 
-    // TODO: Add fallback for unsupported engines
     navigator.clipboard
         .writeText(key_str)
         .then(() => {
-            window.alert('License code is copied to the clipboard');
+            Toastify({
+                text: 'License code is copied to the clipboard',
+                duration: 3000,
+            }).showToast();
         })
         .catch(() => {
-            window.alert(
-                'Can not copy the license code to the clipboard. This feature is probably unsupported by your browser.'
-            );
+            Toastify({
+                text: 'Can not copy the license code to the clipboard. This feature is probably unsupported by your browser.',
+            }).showToast();
         });
 }
 
