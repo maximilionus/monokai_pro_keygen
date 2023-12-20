@@ -43,12 +43,6 @@ body {
     justify-content: center;
 }
 
-input,
-textarea {
-    background-color: var(--bg-secondary-color);
-    color: var(--font-color);
-}
-
 .editor-selector-group {
     text-align: center;
     margin-bottom: 20px;
@@ -111,8 +105,19 @@ textarea {
     margin-bottom: 2rem;
 }
 
-#input_container {
+.input-container {
     margin-bottom: 6rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#input_email {
+    background-color: var(--bg-secondary-color);
+    color: var(--font-color);
+    flex: 1 1 10ch;
+    max-width: 35ch;
 }
 
 #result_output_text {
