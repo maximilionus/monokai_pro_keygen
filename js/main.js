@@ -84,22 +84,35 @@ function display_output(text_to_display) {
     update_license_json(email_field.value, text_to_display);
 }
 
-function copy_key_to_clipboard() {
-    let key_str = document.getElementById('result_output_text').textContent;
+function showToast({ text, isError = false }) {
+    Toastify({
+        text: text,
+        duration: isError ? 10000 : 3000,
+        style: {
+            background: isError
+                ? 'var(--color-error)'
+                : 'linear-gradient(to right, var(--color-outputbox-0), var(--color-outputbox-1))',
+            borderRadius: '4px',
+            boxShadow: 'none',
+        },
+    }).showToast();
+}
 
-    navigator.clipboard
-        .writeText(key_str)
-        .then(() => {
-            Toastify({
-                text: 'License code is copied to the clipboard',
-                duration: 3000,
-            }).showToast();
-        })
-        .catch(() => {
-            Toastify({
-                text: 'Can not copy the license code to the clipboard. This feature is probably unsupported by your browser.',
-            }).showToast();
+async function copy_key_to_clipboard() {
+    const key = document.getElementById('result_output_text').textContent;
+
+    try {
+        await navigator.clipboard.writeText(key);
+        showToast({
+            text: 'License code is copied to the clipboard',
         });
+    } catch (error) {
+        const errorMessage = 'message' in error ? error.message : String(error);
+        showToast({
+            text: `Can not copy the license code to the clipboard. \n${errorMessage}`,
+            isError: true,
+        });
+    }
 }
 
 function input_field_keypress_handler(event) {
