@@ -3,7 +3,7 @@
     --bg-color: #0e0e0e;
     --bg-secondary-color: #303030;
     --color-primary: #36a8ff;
-    --color-lightGrey: #d2d6dd;
+    --color-lightGrey: #92969b;
     --color-grey: #747681;
     --color-darkGrey: #3f4144;
     --color-error: #c45555;
@@ -23,7 +23,7 @@
     :root {
         color-scheme: light;
         --bg-color: #ffffff;
-        --bg-secondary-color: #d6d6d6;
+        --bg-secondary-color: #f9f9f9;
         --color-lightGrey: #cacaca;
         --color-grey: #d1d1d1;
         --color-darkGrey: #eeeeee;
@@ -72,7 +72,7 @@ textarea {
     padding: 1rem;
     border: 0;
     border-radius: 4px;
-    background-color: var(--bg-secondary-color);
+    background-color: var(--color-darkGrey);
     text-align: center;
     cursor: pointer;
 }
@@ -126,11 +126,11 @@ textarea {
     left: 0;
     margin-top: 1em;
     text-align: center;
-    color: var(--bg-secondary-color);
+    color: var(--color-lightGrey);
 }
 
 #copyright_footer a {
-    color: var(--bg-secondary-color);
+    color: var(--color-lightGrey);
 }
 
 #btn_copy_to_clipboard {
