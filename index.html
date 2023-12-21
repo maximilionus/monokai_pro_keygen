@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Monokai Pro Keygen</title>
+    <meta charset="utf-8" />
+    <meta
+        name="description"
+        content="Monokai Pro theme license key generator for Visual Studio Code and Sublime Editor"
+    />
+    <meta name="keywords" content="monokai pro, keygen, vscode, sublime" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="img/ico/icon_main.ico" />
+
+    <link rel="stylesheet" type="text/css" href="css/chota.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/core.css" />
+
+    <script src="js/core.js"></script>
+    <script src="js/md5.min.js"></script>
+    <script src="js/keygen.js"></script>
+</head>
+
+<body>
+    <img class="logo" src="img/png/icon_main.png" />
+    <h1 class="title">Monokai Pro Keygen</h1>
+
+    <div class="editor-selector-group">
+        <input
+            type="radio"
+            name="selected-editor"
+            value="vscode"
+            id="radio-vscode"
+            onclick="set_editor('code')"
+            checked
+        />
+        <label for="radio-vscode">
+            <img src="img/svg/microsoft-visual-studio-code.svg" height="50" />
+        </label>
+        <input type="radio" name="selected-editor" value="sublime" id="radio-sublime" onclick="set_editor('sublime')" />
+        <label for="radio-sublime">
+            <img src="img/svg/sublime-text.svg" height="50" />
+        </label>
+    </div>
+
+    <div class="input-container">
+        <input
+            type="email"
+            id="input_email"
+            placeholder="Email"
+            size="30"
+            onkeyup="input_field_keypress_handler(event)"
+            required
+        />
+
+        <button class="button primary" id="btn_generate" onclick="call_keygen()" disabled>Generate</button>
+    </div>
+
+    <div id="result_output_box" class="grouped">
+        <button class="button outline icon-only" id="btn_copy_to_clipboard" onclick="copy_key_to_clipboard()">
+            <img src="img/svg/content-copy.svg" class="svg-inverted" height="20" />
+        </button>
+        <span id="result_output_text"></span>
+    </div>
+
+    <div class="card">
+        <p>
+            <b>⚠️ This project is intended only for educational and testing purposes.</b>
+        </p>
+        <p>
+            Please consider supporting the original author (<a href="https://monokai.nl/">Wimer Hazenberg</a>) of this
+            fully compatible and well-maintained editor theme, which is one of the best we have for VS Code and Sublime
+            Text. <a href="https://monokai.pro/">Buying</a> a license would help ensure its continued availability and
+            functionality. ❤️ Thank you!
+        </p>
+    </div>
+
+    <div class="card">
+        <p>All calculations are done in your browser, and no data is sent to any server.</p>
+    </div>
+
+    <div class="card">
+        <p><b>Applying the license</b></p>
+        <div data-license-explanation="code">
+            <ol>
+                <li>Open VS Code and ensure you have Monokai Pro installed.</li>
+                <li>Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> to open the command palette.</li>
+                <li>
+                    Search for <code>Monokai Pro</code> and select the option <code>Monokai Pro - enter license</code>.
+                </li>
+                <li>Follow the prompts on-screen to enter your email and license key.</li>
+                <li>You will finally see a thank you pop-up message. You are now running an activated theme.</li>
+            </ol>
+        </div>
+        <div data-license-explanation="sublime" style="display: none">
+            <ol>
+                <li>Open ST3 and ensure you have Monokai Pro installed.</li>
+                <li>
+                    Open up the user preferences for the theme (<code>Preferences</code> &gt;
+                    <code>Package Settings</code> &gt; <code>Theme - Monokai Pro</code> &gt;
+                    <code>Settings - User</code>).
+                </li>
+                <li>
+                    <p>
+                        Copy this text into the file<span id="license-explanation-update-placeholder"
+                            >, with the placeholder values changed appropriately</span
+                        >:
+                    </p>
+                    <pre><code id="license-json">{
+  "email": "YOUR_EMAIL_GOES_HERE",
+  "license_key": "YOUR_LICENSE_GOES_HERE"
+}</code></pre>
+                </li>
+                <li>
+                    Save the file and restart ST3, and you should see a thank you pop-up message. You are now running an
+                    activated theme.
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="copyright_footer">
+        by
+        <a href="https://github.com/maximilionus">maximilionus</a>
+        and
+        <a href="https://github.com/maximilionus/monokai_pro_keygen/graphs/contributors">contributors</a>
+        <br />
+        <a href="https://github.com/maximilionus/monokai_pro_keygen">source</a>
+        -
+        <a href="https://youtu.be/dQw4w9WgXcQ">2023.12</a>
+    </div>
+
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/toastify.min.css" />
+    <script type="text/javascript" src="js/toastify-js.js"></script>
+</body>
