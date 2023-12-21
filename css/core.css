@@ -93,6 +93,33 @@ body {
     pointer-events: none;
 }
 
+.input-container {
+    margin-bottom: 6rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin-bottom: 2rem;
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
+
+.logo {
+    max-width: 10rem;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.title {
+    text-align: center;
+}
+
 #result_output_box {
     display: none;
     white-space: nowrap;
@@ -105,12 +132,18 @@ body {
     margin-bottom: 2rem;
 }
 
-.input-container {
-    margin-bottom: 6rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+@keyframes output_field_gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 #input_email {
@@ -140,37 +173,4 @@ body {
 
 #btn_copy_to_clipboard {
     min-width: fit-content;
-}
-
-@keyframes output_field_gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.card {
-    margin-bottom: 2rem;
-}
-
-.card:last-child {
-    margin-bottom: 0;
-}
-
-.logo {
-    max-width: 10rem;
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-}
-
-.title {
-    text-align: center;
 }

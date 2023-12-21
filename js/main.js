@@ -28,6 +28,7 @@ function set_acccolor(variant) {
         document.documentElement.style.setProperty('--color-primary', '#ff9c5b');
     }
 }
+
 function set_apply_license_explanation(editor) {
     const explanation_elements = document.querySelectorAll('[data-license-explanation]');
 
