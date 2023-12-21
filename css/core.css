@@ -3,7 +3,7 @@
     --bg-color: #0e0e0e;
     --bg-secondary-color: #303030;
     --color-primary: #36a8ff;
-    --color-lightGrey: #d2d6dd;
+    --color-lightGrey: #92969b;
     --color-grey: #747681;
     --color-darkGrey: #3f4144;
     --color-error: #c45555;
@@ -14,15 +14,16 @@
     --grid-gutter: 2rem;
     --font-size: 1.6rem;
     --font-color: #dddddd;
-    --font-family-sans: sans-serif;
-    --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+    --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --font-family-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
 }
 
 @media (prefers-color-scheme: light) {
     :root {
         color-scheme: light;
         --bg-color: #ffffff;
-        --bg-secondary-color: #d6d6d6;
+        --bg-secondary-color: #f9f9f9;
         --color-lightGrey: #cacaca;
         --color-grey: #d1d1d1;
         --color-darkGrey: #eeeeee;
@@ -32,36 +33,28 @@
 }
 
 body {
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-
-/*
- * Disable padding on small screens.
- * Why do I care? Because I CAN!
- */
-@media screen and (max-width : 425px) {
-    body {
-        padding: 1%;
-    }
-}
-
-input,
-textarea {
-    background-color: var(--bg-secondary-color);
-    color: var(--font-color);
+    padding: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 100vh; /* Fallback */
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .editor-selector-group {
     text-align: center;
     margin-bottom: 20px;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 
 .editor-selector-group img {
     display: block;
-    margin: auto;
+    margin: 0;
+    width: 5rem;
 }
 
 .editor-selector-group input[type='radio'] {
@@ -70,20 +63,19 @@ textarea {
 
 .editor-selector-group label {
     display: inline-block;
-    padding: 3px;
+    padding: 1rem;
     border: 0;
     border-radius: 4px;
-    background-color: var(--bg-secondary-color);
-    width: 5em;
-    height: fit-content;
+    background-color: var(--color-darkGrey);
     text-align: center;
+    cursor: pointer;
 }
 
-.editor-selector-group #radio-vscode:checked+label {
+.editor-selector-group #radio-vscode:checked + label {
     background: linear-gradient(to top right, #89ccff, #a1fff2);
 }
 
-.editor-selector-group #radio-sublime:checked+label {
+.editor-selector-group #radio-sublime:checked + label {
     background: linear-gradient(to top right, #ffb685, #ffd86c);
 }
 
@@ -101,25 +93,31 @@ textarea {
     pointer-events: none;
 }
 
-#header-image {
-    margin-bottom: 50px;
-}
-
 #result_output_box {
-    visibility: hidden;
-    opacity: 0;
-    margin-top: 10%;
+    display: none;
     white-space: nowrap;
     overflow: scroll;
-    background: linear-gradient(
-        to right,
-        var(--color-outputbox-0),
-        var(--color-outputbox-1)
-    );
+    background: linear-gradient(to right, var(--color-outputbox-0), var(--color-outputbox-1));
     background-size: 400% 400%;
     border-radius: 4px;
     transition: 0.4s ease-in-out;
     animation: output_field_gradient 40s ease infinite;
+    margin-bottom: 2rem;
+}
+
+.input-container {
+    margin-bottom: 6rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#input_email {
+    background-color: var(--bg-secondary-color);
+    color: var(--font-color);
+    flex: 1 1 10ch;
+    max-width: 35ch;
 }
 
 #result_output_text {
@@ -133,11 +131,11 @@ textarea {
     left: 0;
     margin-top: 1em;
     text-align: center;
-    color: var(--bg-secondary-color);
+    color: var(--color-lightGrey);
 }
 
 #copyright_footer a {
-    color: var(--bg-secondary-color);
+    color: var(--color-lightGrey);
 }
 
 #btn_copy_to_clipboard {
@@ -156,4 +154,23 @@ textarea {
     100% {
         background-position: 0% 50%;
     }
+}
+
+.card {
+    margin-bottom: 2rem;
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
+
+.logo {
+    max-width: 10rem;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.title {
+    text-align: center;
 }
