@@ -1,4 +1,4 @@
-<img align="right" width="100" height="100" src="./data/icons/icon_main.png">
+<img align="right" width="100" height="100" src="img/png/icon_main.png">
 
 # Monokai Pro - License Generator
 
