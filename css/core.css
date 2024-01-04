@@ -43,6 +43,24 @@ body {
     justify-content: center;
 }
 
+code {
+    font-family: var(--font-family-mono);
+    color: var(--font-color);
+    background-color: var(--color-darkGrey);
+    border-radius: 4px;
+}
+
+kbd {
+    font-family: var(--font-family-mono);
+    color: var(--font-color);
+    background-color: var(--color-darkGrey);
+    border-color: var(--color-lightGrey) var(--color-darkGrey) var(--color-darkGrey) var(--color-lightGrey);
+    border-style: solid;
+    border-width: 1px 3px;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+
 .editor-selector-group {
     text-align: center;
     margin-bottom: 20px;
