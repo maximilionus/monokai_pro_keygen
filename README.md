@@ -1,6 +1,4 @@
-<img align="right" width="100" height="100" src="img/png/icon_main.png">
-
-# Monokai Pro - License Generator
+<img align="right" height="60" src="img/png/icon_main.png">
 
 
 ## About
@@ -14,3 +12,5 @@ Monokai Pro theme license key generation tool for **Visual Studio Code** and **S
 
 ## Note
 This project was originally developed as a python script and then evolved into the more useful web version that is currently used as a default one. You still can access the old utility source code on `legacy/python` git branch.
+
+The [releases page](https://github.com/maximilionus/monokai_pro_keygen/releases) contains the original builds of python version and is therefore considered **legacy** and hidden from the project home.
