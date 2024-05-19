@@ -1,4 +1,4 @@
-<img align="right" height="60" src="img/png/icon_main.png">
+<img align="right" height="60" src="assets/png/icon_main.png">
 
 
 ## About
