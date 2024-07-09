@@ -94,7 +94,7 @@ kbd {
 }
 
 .editor-selector-group #radio-sublime:checked + label {
-    background: linear-gradient(to top right, #ffb685, #ffd86c);
+    background: linear-gradient(to top right, #ffd699, #ffe6c1);
 }
 
 .svg-inverted {
