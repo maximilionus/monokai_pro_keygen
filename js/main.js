@@ -7,11 +7,8 @@ function get_selected_editor() {
     let vscode_radio = document.querySelector('input[id="radio-vscode"]:checked');
     let sublime_radio = document.querySelector('input[id="radio-sublime"]:checked');
 
-    if (vscode_radio !== null) {
-        result_str = 'code';
-    } else if (sublime_radio !== null) {
-        result_str = 'sublime';
-    }
+    if (vscode_radio !== null) result_str = 'code';
+    else if (sublime_radio !== null) result_str = 'sublime';
 
     return result_str;
 }
@@ -22,11 +19,8 @@ function set_editor(editor) {
 }
 
 function set_acccolor(variant) {
-    if (variant === 'code') {
-        document.documentElement.style.setProperty('--color-primary', '#36a8ff');
-    } else if (variant === 'sublime') {
-        document.documentElement.style.setProperty('--color-primary', '#ff9c5b');
-    }
+    if (variant === 'code') document.documentElement.style.setProperty('--color-primary', '#36a8ff');
+    else if (variant === 'sublime') document.documentElement.style.setProperty('--color-primary', '#ff9c5b');
 }
 
 function set_apply_license_explanation(editor) {
@@ -51,15 +45,10 @@ function call_keygen() {
     let input_email = document.getElementById('input_email').value;
     let selected_editor = get_selected_editor();
 
-    if (validateEmail(input_email) === false) {
-        return false;
-    }
+    if (validateEmail(input_email) === false) return false;
 
-    if (selected_editor === 'code') {
-        generated_key = keygen_vscode(input_email);
-    } else if (selected_editor === 'sublime') {
-        generated_key = keygen_sublime(input_email);
-    }
+    if (selected_editor === 'code') generated_key = keygen_vscode(input_email);
+    else if (selected_editor === 'sublime') generated_key = keygen_sublime(input_email);
 
     display_output(generated_key);
 }
@@ -129,9 +118,7 @@ function input_field_keypress_handler(event) {
     if (validateEmail(email_input_field.value) == true) {
         email_input_field.className = 'success';
         button_generate.disabled = false;
-        if (event.key === 'Enter') {
-            call_keygen();
-        }
+        if (event.key === 'Enter') call_keygen();
     } else {
         email_input_field.className = 'error';
         button_generate.disabled = true;
