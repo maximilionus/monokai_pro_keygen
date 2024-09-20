@@ -7,7 +7,7 @@ Monokai Pro theme license key generation tool for **Visual Studio Code** and **S
 > **Warning**  
 > **This project is intended only for educational and testing purposes.**  
 >
-> Please consider supporting the original author ([Wimer Hazenberg](https://monokai.nl/)) of this fully compatible and well-maintained editor theme, which is one of the best we have for VS Code and Sublime Text. [Buying](https://monokai.pro/) a license would help ensure its continued availability and functionality. ❤️ Thank you!
+> Please consider [purchasing](https://monokai.pro/) a license to support [Wimer Hazenberg](https://monokai.nl/), the original author of this amazing theme. ❤️ Thank you!
 
 
 ## Note

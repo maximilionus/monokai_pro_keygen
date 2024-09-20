@@ -121,6 +121,7 @@ kbd {
 
 .card {
     margin-bottom: 2rem;
+    box-shadow: 0 1px 0 2px var(--color-grey)
 }
 
 .card:last-child {
