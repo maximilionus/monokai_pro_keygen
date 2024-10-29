@@ -50,6 +50,10 @@ code {
     border-radius: 4px;
 }
 
+pre {
+    border-radius: 4px;
+}
+
 kbd {
     font-family: var(--font-family-mono);
     color: var(--font-color);
@@ -141,14 +145,15 @@ kbd {
 
 #result_output_box {
     display: none;
+    text-align: center;
     white-space: nowrap;
     overflow: auto;
     background: linear-gradient(to right, var(--color-outputbox-0), var(--color-outputbox-1));
     background-size: 400% 400%;
     border-radius: 4px;
+    margin-bottom: 6rem;
     transition: 0.4s ease-in-out;
     animation: output_field_gradient 40s ease infinite;
-    margin-bottom: 2rem;
 }
 
 @keyframes output_field_gradient {
@@ -173,7 +178,6 @@ kbd {
 }
 
 #result_output_text {
-    margin: auto;
     color: #fff;
     opacity: 0.95;
     font-size: 24px;
