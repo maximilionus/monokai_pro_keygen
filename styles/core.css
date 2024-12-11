@@ -48,6 +48,7 @@ code {
     color: var(--font-color);
     background-color: var(--color-darkGrey);
     border-radius: 4px;
+    white-space: nowrap;
 }
 
 pre {
